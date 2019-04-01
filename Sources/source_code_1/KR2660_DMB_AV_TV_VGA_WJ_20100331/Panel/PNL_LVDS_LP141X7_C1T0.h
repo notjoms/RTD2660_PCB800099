@@ -26,8 +26,8 @@ LVDS/14.1''
 #define _DISPLAY_PORT                   _DISP_SINGLE_PORT
 
 //--------------------------------------------------
-#define _DISP_WID                      1024// 800
-#define _DISP_LEN                       768//600
+#define _DISP_WID                      1920// 800
+#define _DISP_LEN                       1080//600
 
 #define _DH_ACT_STA_POS                 32
 #define _DH_ACT_END_POS                 (_DISP_WID + _DH_ACT_STA_POS)
@@ -40,9 +40,9 @@ LVDS/14.1''
 #define _LVDS_MAP                       _LVDS_MAP2
 
 //--------------------------------------------------
-#define _STD_DH_TOTAL                1280//1280/1260 /1200/960/940
+#define _STD_DH_TOTAL                1920//1280/1260 /1200/960/940
 
-#define _STD_DV_TOTAL                820// 860
+#define _STD_DV_TOTAL                1080// 860
 
 #define _STD_PIXCEL_CLOCK               (((DWORD)_STD_DH_TOTAL * (DWORD)_STD_DV_TOTAL * (DWORD)60) / (DWORD)1000000)
 

@@ -46,6 +46,9 @@ void CAdjustAudio(void)
 // Input Value  : None
 // Output Value : None
 //--------------------------------------------------
+int adjBri(int bri, double constant){
+	return pow((pow(100, constant-1)*bri), 1 / constant);
+}
 void CAdjustBrightness(void)
 {
    	if(_GET_INPUT_SOURCE() == _SOURCE_VGA)
@@ -57,7 +60,7 @@ void CAdjustBrightness(void)
     //   EricLee modify for AV/SV gary-scale
     else if(0)//_GET_INPUT_SOURCE() == _SOURCE_VIDEO_AV || _GET_INPUT_SOURCE() == _SOURCE_VIDEO_SV)
     {
-		pData[0] = (0x78 + stConBriData.Brightness - 50);//0x80
+		pData[0] = (0x78 + adjBri(stConBriData.Brightness, 5) - 50);//0x80
 		pData[1] = (0x78 + stConBriData.Brightness - 50);//0x80
 		pData[2] = (0x78 + stConBriData.Brightness - 50);//0x80
     }
